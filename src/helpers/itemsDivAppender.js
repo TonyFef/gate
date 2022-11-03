@@ -9,6 +9,4 @@ export const itemsDivAppender = (gridFractions) => {
   itemsDiv.id = "items";
 
   rootDiv.append(itemsDiv);
-
-  return;
 };

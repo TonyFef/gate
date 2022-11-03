@@ -1,3 +1,5 @@
-export const urlModifier = (requestText) => {
-  history.pushState({}, "", `${requestText}`);
+export const urlModifier = (requestText, url) => {
+  requestText
+    ? history.replaceState({}, "", `${requestText}`)
+    : (window.location.href = url);
 };
