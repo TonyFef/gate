@@ -1,3 +1,5 @@
+import { inputListenerModule } from "./inputListenerModule";
+
 export const formModule = () => {
   const rootDiv = document.getElementById("root");
 
@@ -11,5 +13,8 @@ export const formModule = () => {
 
   rootDiv.append(form);
 
-  console.log("form");
+  const formFounded = document.querySelector(".form");
+  const inputFounded = document.querySelector(".form__input");
+
+  inputListenerModule(formFounded, inputFounded);
 };

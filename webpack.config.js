@@ -1,28 +1,26 @@
-const path = require("path");
-const HTMLPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+import { resolve } from "path";
+import HTMLPlugin from "html-webpack-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 
-module.exports = {
-  entry: "./src/app.js",
-  output: {
-    filename: "bundle.[chunkhash].js",
-    path: path.resolve(__dirname, "public"),
-  },
-  devServer: {
-    port: 3000,
-  },
-  plugins: [
-    new HTMLPlugin({
-      template: "./src/index.html",
-    }),
-    new CleanWebpackPlugin(),
+export const entry = "./src/app.js";
+export const output = {
+  filename: "bundle.[chunkhash].js",
+  path: resolve(__dirname, "public"),
+};
+export const devServer = {
+  port: 3000,
+};
+export const plugins = [
+  new HTMLPlugin({
+    template: "./src/index.html",
+  }),
+  new CleanWebpackPlugin(),
+];
+export const module = {
+  rules: [
+    {
+      test: /\.css$/i,
+      use: ["style-loader", "css-loader"],
+    },
   ],
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-    ],
-  },
 };

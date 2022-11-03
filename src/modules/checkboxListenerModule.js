@@ -1,4 +1,4 @@
-export const listenersModule = (itemsDiv) => {
+export const checkboxListenerModule = (itemsDiv) => {
   if (itemsDiv) {
     itemsDiv.addEventListener("click", (e) => {
       if (e.target.type === "checkbox") {
