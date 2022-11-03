@@ -1,6 +1,6 @@
 import { gridCounter } from "../helpers/gridCounter";
 import { itemsDivAppender } from "../helpers/itemsDivAppender";
-import { listenersModule } from "./listenersModule";
+import { checkboxListenerModule } from "./checkboxListenerModule";
 
 export const itemsModule = async () => {
   const response = await fetch(
@@ -29,11 +29,6 @@ export const itemsModule = async () => {
     itemsDiv.append(itemDiv);
   });
 
-  // console.log("items");
-
   const itemsDiv = document.getElementById("items");
-  // console.log(itemsDiv);
-  listenersModule(itemsDiv);
-
-  // console.log(smth);
+  checkboxListenerModule(itemsDiv);
 };
