@@ -17,7 +17,7 @@ export const itemsModule = async (requestFromInput) => {
       // Matches everywhere in string
       return title.match(regExp);
 
-      // // Matches only at the beginning
+      // Matches only at the beginning
       // return title.includes(requestFromInput);
     });
     recievedData = filteredRequestFromInput;
@@ -41,8 +41,11 @@ export const itemsModule = async (requestFromInput) => {
                 ${item.title}
             </h3>
             <p>${item.body}</p>
-            <div>
-                <input type="checkbox" name="item${item.id}">
+            <div class="item__checkbox">
+              <label class="label" for="checkbox${item.id}" >
+                <input type="checkbox" name="item${item.id}" class="checkbox" id="checkbox${item.id}" />
+                <div class="slider round"></div> 
+              </label>
             </div>
     `;
 
